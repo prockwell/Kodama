@@ -4,10 +4,23 @@
     <configurations>
       <configuration name="Kodama" target-platform="Desktop" pure-as="true" main-class="Kodama" output-file="Kodama.swf" output-folder="$MODULE_DIR$/out/production/Kodama">
         <dependencies target-player="11.4">
-          <sdk name="Flex SDK" />
+          <entries>
+            <entry library-name="starling" library-level="application">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="framework" library-level="application">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="DConsole2.3" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
+          <sdk name="flexSDK" />
         </dependencies>
-        <compiler-options />
-        <packaging-air-desktop package-file-name="Kodama" />
+        <compiler-options>
+          <option name="additionalOptions" value="-swf-version=17" />
+        </compiler-options>
+        <packaging-air-desktop use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/Kodama-app.xml" package-file-name="Kodama" />
         <packaging-android />
         <packaging-ios />
       </configuration>
@@ -19,8 +32,11 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="Flex SDK" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="jdk" jdkName="flexSDK" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="starling" level="application" />
+    <orderEntry type="library" exported="" name="framework" level="application" />
+    <orderEntry type="library" exported="" name="DConsole2.3" level="project" />
   </component>
 </module>
 
